@@ -1,0 +1,40 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+    encoders:
+        # Our user class and the algorithm we'll use to encode passwords
+        # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
+        AppBundle\Entity\User: bcrypt
+
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        # in this example, users are stored via Doctrine in the database
+        # To see the users at src/AppBundle/DataFixtures/ORM/LoadFixtures.php
+        # To load users from somewhere else: http://symfony.com/doc/current/cookbook/security/custom_provider.html
+        database_users:
+            entity: { class: AppBundle:User, property: username }
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            json_login:
+                check_path: /login
+                success_handler:          lexik_jwt_authentication.handler.authentication_success
+                failure_handler:          lexik_jwt_authentication.handler.authentication_failure
+
+              # activate different ways to authenticate
+
+              # This allows the user to login by submitting a username and password
+            # Reference: http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
+
+            logout:
+                # The route name the user can go to in order to logout
+                path: logout
+                # The name of the route to redirect to after logging out
+                target: homepage
