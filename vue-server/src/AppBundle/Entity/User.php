@@ -37,13 +37,6 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255)
-     */
-    private $email;
-
-    /**
      * @var bool
      *
      * @ORM\Column(name="isActive", type="boolean")
@@ -109,29 +102,6 @@ class User implements UserInterface
         return $this->password;
     }
 
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return User
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
 
     /**
      * Set isActive

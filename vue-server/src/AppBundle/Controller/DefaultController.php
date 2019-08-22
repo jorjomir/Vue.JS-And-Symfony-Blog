@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class DefaultController extends Controller
@@ -34,26 +35,6 @@ class DefaultController extends Controller
      */
     public function loginAction(Request $request)
     {
-        // import AuthenticationUtils $authenticationUtils
-        // get the login error if there is one
-        /*
-        $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
-        return $this->render('default/login.html.twig', [
-            'last_username' => $lastUsername,
-            'error'         => $error,
-        ]);
-        */
-        //$user = $this->getUser();
-
-        /*
-        return $this->json([
-            'username' => $user->getUsername(),
-        ]);
-        */
-        //$data = json_decode($request->getContent(), true);
-        //return new JsonResponse($data);
         /** @var User $user */
         $user = $this->getUser();
         $response = new Response();
@@ -64,7 +45,54 @@ class DefaultController extends Controller
             ]));
         } else {
             $response->setContent(json_encode([
-                'error' => 'greshka moi',
+                'error' => 'error',
+            ]));
+        }
+        // Allow all websites
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Credentials', 'true');
+        $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+        $response->headers->set('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+
+
+        return $response;
+    }
+
+    /**
+     * @Route("/register", name="register")
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @return Response
+     */
+    public function registerAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        //GET POST REQUEST PARAMETERS
+        $data = json_decode($request->getContent(), true);
+        $username=$data['username'];
+        $password=$data['password'];
+        if($username && $password) {
+            $user= new User();
+            $user->setUsername($username);
+            $password = $passwordEncoder->encodePassword($user, $password);
+            $user->setPassword($password);
+
+            // 4) save the User!
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+        }
+
+        $response = new Response();
+        if($user) {
+            $response->setContent(json_encode([
+                'username' => $user->getUsername(),
+                'role' => $user->getRoles()
+            ]));
+        } else {
+            $response->setContent(json_encode([
+                'error' => 'error',
             ]));
         }
         //header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
@@ -78,6 +106,35 @@ class DefaultController extends Controller
 
 
         return $response;
+    }
+
+    /**
+     * @Route("/if-username-exists", name="checkIfUsernameExists")
+     * @param Request $request
+     * @return Response
+     */
+    public function checkIfUsernameExistsAction(Request $request) {
+        $response = new Response();
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Credentials', 'true');
+        $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+        $response->headers->set('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+        $data = json_decode($request->getContent(), true);
+        $username=$data['username'];
+        $userRepo=$this->getDoctrine()->getRepository(User::class);
+        if($userRepo->findOneBy(['username' => $username])) {
+            $response->setContent(json_encode([
+                'status' => true,
+            ]));
+            return $response;
+        } else {
+            $response->setContent(json_encode([
+                'status' => false,
+            ]));
+            return $response;
+        }
     }
 
     /**
@@ -100,37 +157,6 @@ class DefaultController extends Controller
         //$response->headers->set('Access-Control-Allow-Origin', 'https://jsfiddle.net/');
         // You can set the allowed methods too, if you want    //$response->headers->set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, PATCH, OPTIONS');
         return $response;
-    }
-
-    /**
-     * @Route("/register", name="register")
-     * @param Request $request
-     * @return RedirectResponse|Response
-     */
-    public function registerAction(Request $request)
-    {
-        // 1) build the form
-        $user = new User();
-        $form = $this->createForm(UserType::class, $user);
-        // 2) handle the submit (will only happen on POST)
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            // 3) Encode the password (you could also do this via Doctrine listener)
-            $password = $this->get('security.password_encoder')
-                ->encodePassword($user, $user->getPassword());
-            $user->setPassword($password);
-            // 4) save the User!
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
-            // ... do any other work - like sending them an email, etc
-            // maybe set a "flash" success message for the user
-            return $this->redirectToRoute('login');
-        }
-        return $this->render(
-            'default/register.html.twig',
-            ['form' => $form->createView()]
-        );
     }
 
     /**
