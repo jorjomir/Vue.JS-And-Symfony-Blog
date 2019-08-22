@@ -7,7 +7,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import { routes } from './routes'
 //import { axiosPlugin } from '@/plugins/axiosPlugin'
-import { auth } from '@/services/authService'
+import { auth, admin } from '@/services/authService'
 import './assets/js/jquery-3.2.1.min.js'
 //import './assets/js/popper.js'
 import 'bootstrap' 
@@ -43,6 +43,7 @@ Vue.use(Vuelidate)
 //Vue.use(axiosPlugin)
 Vue.config.productionTip = false
 Vue.mixin(auth)
+Vue.mixin(admin)
 
 const base = axios.create({
   baseURL: 'http://localhost:8000'

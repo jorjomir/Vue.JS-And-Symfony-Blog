@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cef1b8f3-2cf3-484f-b475-27173f6f01a5" name="Default Changelist" comment="" />
+    <list default="true" id="cef1b8f3-2cf3-484f-b475-27173f6f01a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/components/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/src/components/TopNavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/components/TopNavbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/src/services/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/services/authService.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +71,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1PHgy8lP5OE9AkWddl32bswPrOn" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -97,7 +105,7 @@
       <workItem from="1565536755368" duration="18223000" />
       <workItem from="1566338623205" duration="623000" />
       <workItem from="1566458976446" duration="781000" />
-      <workItem from="1566465129209" duration="5241000" />
+      <workItem from="1566465129209" duration="7040000" />
     </task>
     <servers />
   </component>

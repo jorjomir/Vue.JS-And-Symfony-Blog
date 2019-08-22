@@ -65,8 +65,15 @@ export default {
           // eslint-disable-next-line
           .then(user => {
             if (!this.isAuthenticated) {
-              this.$root.$emit('logged', user.data.token)
-              this.$router.push('/');
+              if(user.data.username=="jorjomir") {
+                this.$root.$emit('logged', user.data.token)
+                this.$root.$emit('logged-admin', user.data.username)
+                this.$router.push('/');
+              } else {
+                this.$root.$emit('logged', user.data.token)
+                this.$router.push('/');
+              }
+              
             } else {
               this.$router.push({ path: '/login', query: { error: 'invalid' } });
             }

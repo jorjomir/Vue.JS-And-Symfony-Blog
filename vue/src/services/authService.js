@@ -14,7 +14,24 @@ export const auth= {
       this.$root.$on('logged-out', () => this.token=null)
     }
 }
-//TODO: FOR LOGOUT JUST DELETE LOCALSTORAGE TOKEN AND USERNAME
+
+export const admin= {
+  data() {
+    return {
+      username: localStorage.getItem('username')
+    }
+  },
+    computed: {
+        isAdmin() {
+            return this.username!=="jorjomir";
+        }
+    },
+    created() {
+      this.$root.$on('logged-admin', username => this.username=username)
+      this.$root.$on('logged-out-admin', () => this.username=null)
+    }
+}
+
 export const loginUser = {
     methods: {
         login(username, password) {

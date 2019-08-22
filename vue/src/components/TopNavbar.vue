@@ -34,6 +34,11 @@
             <a href="#" @click="Logout()" class="nav-link">Logout</a>
             </li>
           </template>
+          <template v-if="!isAdmin">
+            <li class="nav-item">
+            <router-link to="/new-article" class="nav-link">+New Article</router-link>
+            </li>
+          </template>
         </ul>
       </div>
     </div>
@@ -46,6 +51,7 @@ export default {
   methods: {
     Logout() {
       this.$root.$emit('logged-out')
+      this.$root.$emit('logged-out-admin')
       localStorage.clear();
     }
   }
