@@ -1,8 +1,17 @@
 export const auth= {
+  data() {
+    return {
+      token: localStorage.getItem('token')
+    }
+  },
     computed: {
         isAuthenticated() {
-            return localStorage.getItem('token') !== null;
+            return this.token!==null;
         }
+    },
+    created() {
+      this.$root.$on('logged', token => this.token=token)
+      this.$root.$on('logged-out', () => this.token=null)
     }
 }
 //TODO: FOR LOGOUT JUST DELETE LOCALSTORAGE TOKEN AND USERNAME
@@ -22,12 +31,12 @@ export const loginUser = {
                   password: password
                 })
                 .then(function(response) {
-                
                     //LOGIN
                   if(response.data.username && response.data.token) {
                     localStorage.setItem('username', response.data.username);
                     localStorage.setItem('token', response.data.token)
                   }
+                  return response;
                   
                 })
                 .catch(function(error) {

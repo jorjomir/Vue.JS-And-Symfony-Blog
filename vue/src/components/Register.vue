@@ -74,7 +74,10 @@ export default {
         // eslint-disable-next-line
         .then(
             this.login(this.username, this.password)
-            .then(this.$router.push('/'))
+            .then(user =>  {
+                this.$root.$emit('logged', user.data.token)
+                this.$router.push('/')
+            })
         );
     },
     usernameCheck() {

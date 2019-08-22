@@ -63,6 +63,5 @@ const vueRouter = new VueRouter({
   new Vue({
   el: '#app',
   router: vueRouter,
-  render: h => h(App)
-  
+  render: h => h(App),
   });

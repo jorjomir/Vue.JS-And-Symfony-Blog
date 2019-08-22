@@ -29,6 +29,11 @@
             <router-link to="/login" class="nav-link">Login</router-link>
           </li>
           </template>
+          <template v-else>
+            <li class="nav-item">
+            <a href="#" @click="Logout()" class="nav-link">Logout</a>
+            </li>
+          </template>
         </ul>
       </div>
     </div>
@@ -37,7 +42,13 @@
 
 <script>
 export default {
-  name: "TopNavbar"
+  name: "TopNavbar",
+  methods: {
+    Logout() {
+      this.$root.$emit('logged-out')
+      localStorage.clear();
+    }
+  }
 };
 </script>
 

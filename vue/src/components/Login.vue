@@ -63,8 +63,9 @@ export default {
         this.isSubmitted = true;
         this.login(this.username, this.password)
           // eslint-disable-next-line
-          .then(() => {
-            if (this.isAuthenticated) {
+          .then(user => {
+            if (!this.isAuthenticated) {
+              this.$root.$emit('logged', user.data.token)
               this.$router.push('/');
             } else {
               this.$router.push({ path: '/login', query: { error: 'invalid' } });

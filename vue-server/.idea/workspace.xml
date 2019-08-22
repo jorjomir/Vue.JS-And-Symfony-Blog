@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cef1b8f3-2cf3-484f-b475-27173f6f01a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/components/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/main.js" afterDir="false" />
-    </list>
+    <list default="true" id="cef1b8f3-2cf3-484f-b475-27173f6f01a5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +97,7 @@
       <workItem from="1565536755368" duration="18223000" />
       <workItem from="1566338623205" duration="623000" />
       <workItem from="1566458976446" duration="781000" />
-      <workItem from="1566465129209" duration="4651000" />
+      <workItem from="1566465129209" duration="5241000" />
     </task>
     <servers />
   </component>
