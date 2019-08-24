@@ -43,6 +43,11 @@ class User implements UserInterface
      */
     private $isActive=true;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="author")
+     */
+    private $comments;
+
 
     /**
      * Get id
@@ -53,6 +58,23 @@ class User implements UserInterface
     {
         return $this->id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * @param mixed $comments
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+    }
+
 
     /**
      * Set username

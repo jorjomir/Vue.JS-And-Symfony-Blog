@@ -11,6 +11,8 @@ import { auth, admin } from '@/services/authService'
 import './assets/js/jquery-3.2.1.min.js'
 //import './assets/js/popper.js'
 import 'bootstrap' 
+import moment from 'moment'
+import animate from 'animate.css'
 //import './assets/js/stellar.js'
 //import './assets/js/jquery.magnific-popup.min.js'
 //import './assets/js/jquery.nice-select.min.js'
@@ -40,6 +42,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 Vue.use(VueRouter)
 Vue.use(axios)
 Vue.use(Vuelidate)
+Vue.use(animate)
 //Vue.use(axiosPlugin)
 Vue.config.productionTip = false
 Vue.mixin(auth)
@@ -56,6 +59,11 @@ VueRouter.prototype.push = function push(location, onResolve, onReject) {
   if (onResolve || onReject) return originalPush.call(this, location, onResolve, onReject)
   return originalPush.call(this, location).catch(err => err)
 }
+Vue.filter('formatDate', function(value) {
+  if (value) {
+    return moment(String(value)).format('HH:mm D-MM-Y')
+  }
+})
 const vueRouter = new VueRouter({
   mode: 'history',
   routes

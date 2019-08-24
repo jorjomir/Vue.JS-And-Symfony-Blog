@@ -2,10 +2,12 @@
 <div>
   <topnavbar></topnavbar>
   <div id="app">
+    <transition name="page" mode="out-in">
     <router-view>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     </router-view>
+    </transition>
   </div>
 </div>
 </template>
@@ -29,5 +31,21 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s, transform .5s;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+  transform: translateY(-30%);
+}
+
+.router-anim-enter-active {
+  animation: coming 1s;
+  animation-delay: .5s;
+  opacity: 0;
+}
+.router-anim-leave-active {
+  animation: going 1s;
 }
 </style>

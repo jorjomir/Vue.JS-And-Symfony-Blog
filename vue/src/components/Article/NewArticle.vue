@@ -8,11 +8,11 @@
               <h3 class="mb-3">Create New Article</h3>
               <div class="form-group">
                 <label for="title">Title</label>
-                <input v-model="title" type="text" id="title" class="form-control" />
+                <input maxlength="60" v-model="title" type="text" id="title" class="form-control" />
               </div>
               <div class="form-group">
                 <label for="summary">Summary</label>
-                <input v-model="summary" type="text" id="summary" class="form-control" />
+                <input maxlength="160" v-model="summary" type="text" id="summary" class="form-control" />
               </div>
               <div class="form-group">
                 <label for="content">Content</label>
@@ -33,7 +33,7 @@
 
 <script>
 import { newArticle } from "@/services/articleService";
-import { required } from "vuelidate/lib/validators";
+import { required, maxLength } from "vuelidate/lib/validators";
 export default {
   name: "NewArticle",
   data() {
@@ -49,7 +49,8 @@ export default {
       required
     },
     summary: {
-      required
+      required,
+      maxLength: maxLength(5)
     },
     content: {
       required
@@ -66,8 +67,7 @@ export default {
         this.createArticle(this.title, this.summary, this.content)
           // eslint-disable-next-line
           .then(response => {
-              let articleId= response.data.id;
-              
+              this.$router.push('article-' + response.data.id)
           });
       }
     }

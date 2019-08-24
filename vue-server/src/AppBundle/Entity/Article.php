@@ -49,6 +49,11 @@ class Article
      */
     private $dateAdded;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="article")
+     */
+    private $comments;
+
     public function __construct()
     {
         $timezone = new \DateTimeZone('Europe/Sofia');
@@ -64,6 +69,23 @@ class Article
     {
         return $this->id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * @param mixed $comments
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+    }
+
 
     /**
      * Set title
