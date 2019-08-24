@@ -36,7 +36,27 @@ export const viewArticle = {
     }
   },
   created() {
-    this.$http
+    this.loadArticle();
+    this.loadComments();
+      
+  },
+  methods: {
+    addComment(content) {
+      return this.$http
+        .post("/add-comment", {
+          id: this.$route.params.id,
+          content: content,
+          author: localStorage.getItem('username')
+        })
+        .then(function (response) {
+          return response;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    },
+    loadArticle() {
+      this.$http
       .post("/article", {
         id: this.$route.params.id,
       })
@@ -48,6 +68,8 @@ export const viewArticle = {
         }
 
       })
+    },
+    loadComments() {
       this.$http
       .post("/get-article-comments", {
         id: this.$route.params.id,
@@ -56,28 +78,11 @@ export const viewArticle = {
         if (response.data.error) {
           this.$router.push('/');
         } else {
-          console.log(response.data);
+          console.log(response.data[0]);
           this.comments = response.data[0];
         }
 
       })
-  },
-  methods: {
-    addComment(content) {
-      return this.$http
-        .post("/add-comment", {
-          id: this.$route.params.id,
-          content: content,
-          author: localStorage.getItem('username')
-        })
-        .then(function (response) {
-          console.log(response)
-          return response;
-
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
     }
   }
 }

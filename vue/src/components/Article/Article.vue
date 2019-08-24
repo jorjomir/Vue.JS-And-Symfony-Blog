@@ -24,18 +24,18 @@
       <div class="col-md-4">
         <div class="card">
           <div class="card-header">
-            <span class="text-left">
+            <span class="mr-5">
               <strong>{{comment.username}}</strong>
             </span>
             <span class="text-muted pull-right">{{comment[0].dateAdded.date | formatDate}}</span>
           </div>
-          <div class="panel-body">{{comment[0].content}}</div>
+          <div class="panel-body text-left ml-3">{{comment[0].content}}</div>
           <!-- /panel-body -->
         </div>
       </div>
     </div>
     <template v-if="isAuthenticated">
-      <form @submit.prevent="addComment">
+      <form @submit.prevent="submitHandler">
         <div class="row">
           <div class="col-md-1"></div>
           <div class="form-group col-md-4 ml-2">
@@ -71,20 +71,16 @@ export default {
       newComment: required
   },
   methods: {
-    addComment() {
+    submitHandler() {
       this.$v.$touch();
       if (this.$v.$invalid) {
         this.submitStatus = "ERROR";
       } else {
         this.isSubmitted = true;
-        console.log(this.newComment)
-        /*
-        this.addComment(this.comment)
+        this.addComment(this.newComment)
           // eslint-disable-next-line
-          .then(response => {
-              this.$router.push('article-' + response.data.id)
-          });
-          */
+          .then(response => this.loadComments());
+          
       }
     }
   }
@@ -122,6 +118,9 @@ export default {
 .card > .card-header:before {
   border-right-color: #ddd;
   border-width: 8px;
+}
+.panel-body {
+    margin: 5px 5px 5px 5px;
 }
 .user-photo {
   max-width: 70px;

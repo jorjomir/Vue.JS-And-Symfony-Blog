@@ -33,7 +33,7 @@ export default {
   margin-top: 60px;
 }
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s, transform .5s;
+  transition: opacity .3s, transform .3s;
 }
 .page-enter, .page-leave-to {
   opacity: 0;
@@ -42,7 +42,7 @@ export default {
 
 .router-anim-enter-active {
   animation: coming 1s;
-  animation-delay: .5s;
+  animation-delay: .4s;
   opacity: 0;
 }
 .router-anim-leave-active {
