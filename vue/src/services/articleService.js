@@ -78,7 +78,6 @@ export const viewArticle = {
         if (response.data.error) {
           this.$router.push('/');
         } else {
-          console.log(response.data[0]);
           this.comments = response.data[0];
         }
 
@@ -146,5 +145,24 @@ export const editArticleService = {
           console.log(error);
         });
     }
+  }
+}
+
+export const deleteArticle = {
+  methods: {
+      deleteArticle(id) {
+          return this.$http
+            .post("/delete-article", {
+              id: id,
+            })
+            .then(function (response) {
+              return response;
+            })
+            .catch(function (error) {
+              // eslint-disable-next-line
+              console.log(error);
+            });
+        }
+      
   }
 }

@@ -11,7 +11,10 @@ export const auth= {
     },
     created() {
       this.$root.$on('logged', token => this.token=token)
-      this.$root.$on('logged-out', () => this.token=null)
+      this.$root.$on('logged-out', () => {
+        this.token=null;
+        this.$router.push("/")
+      })
     }
 }
 
@@ -35,29 +38,23 @@ export const admin= {
 export const loginUser = {
     methods: {
         login(username, password) {
-            let options = {
-                methods: "POST",
-                header: {
-                  "Content-Type": "application/json"
-                }
-              };
-        
               return this.$http
                 .post("/login", {
                   username: username,
                   password: password
                 })
                 .then(function(response) {
+                  console.log(response)
                     //LOGIN
-                  if(response.data.username && response.data.token) {
-                    localStorage.setItem('username', response.data.username);
-                    localStorage.setItem('token', response.data.token)
-                  }
-                  return response;
+                      if(response.data.username && response.data.token) {
+                        localStorage.setItem('username', response.data.username);
+                        localStorage.setItem('token', response.data.token)
+                      }
                   
+                  return response;
                 })
                 .catch(function(error) {
-                  console.log(error);
+                  return error;
                 });
         }
     }

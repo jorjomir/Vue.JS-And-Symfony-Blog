@@ -9,16 +9,19 @@
     </router-view>
     </transition>
   </div>
+  <footerComponent></footerComponent>
 </div>
 </template>
 
 
 <script>
 import topnavbar from './components/TopNavbar'
+import footerComponent from './components/Footer'
 export default {
   name: 'app',
   components: {
-    topnavbar
+    topnavbar,
+    footerComponent
   }
 }
 </script>
@@ -30,7 +33,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  
 }
 .page-enter-active, .page-leave-active {
   transition: opacity .3s, transform .3s;

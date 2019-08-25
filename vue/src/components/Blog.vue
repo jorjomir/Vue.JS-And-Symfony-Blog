@@ -91,4 +91,7 @@ export default {
 .index-content .text-muted {
   margin: 0!important;
 }
+.index-content {
+    margin-top: 40px!important;
+}
 </style>

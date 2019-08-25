@@ -84,4 +84,61 @@ class CommentController extends Controller
         }
 
     }
+
+    /**
+     * @Route("/get-all-comments", name="getAllComments")
+     */
+    public function getAllComments() {
+        $response = new Response();
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Credentials', 'true');
+        $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+        $response->headers->set('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+            "SELECT c, u.username, a.id, a.title
+        FROM AppBundle:Comment c JOIN AppBundle:User u WITH u.id=c.author JOIN AppBundle:Article a WITH c.article=a.id
+        WHERE u.username!='jorjomir' ORDER BY c.id DESC"
+        );
+        $comments = $query->getArrayResult();
+        $response->setContent(json_encode([
+            $comments
+        ]));
+        return $response;
+    }
+
+    /**
+     * @Route("/delete-comment", name="deleteComment")
+     */
+    public function deleteCommentAction(Request $request) {
+        $response = new Response();
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Credentials', 'true');
+        $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+        $response->headers->set('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+        $data = json_decode($request->getContent(), true);
+        $id = $data['id'];
+        if($id) {
+            $comment=$this->getDoctrine()->getRepository(Comment::class)->find($id);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($comment);
+            $em->flush();
+
+            $response->setContent(json_encode([
+                'success' => 'success'
+            ]));
+            return $response;
+        } else {
+            $response->setContent(json_encode([
+                'error' => 'error'
+            ]));
+            return $response;
+        }
+    }
+
+
 }

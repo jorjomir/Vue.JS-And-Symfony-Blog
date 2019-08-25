@@ -38,6 +38,9 @@
             <li class="nav-item">
             <router-link to="/new-article" class="nav-link">+New Article</router-link>
             </li>
+            <li class="nav-item">
+            <router-link to="/comments" class="nav-link">Comments</router-link>
+            </li>
           </template>
         </ul>
       </div>
@@ -62,5 +65,6 @@ export default {
 <style scoped>
 .navbar {
   z-index: 999999;
+  margin-bottom: 0!important;
 }
 </style>

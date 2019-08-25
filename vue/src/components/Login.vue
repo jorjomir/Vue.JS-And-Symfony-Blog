@@ -13,11 +13,11 @@
             <div class="text-center text-danger" v-if="this.$route.query.error">
               <p>Invalid username or password!</p>
             </div>
-            <div class="form-group">
+            <div class="form-group mx-3">
               <label for="username">Username</label>
               <input v-model="username" type="text" id="username" class="form-control" />
             </div>
-            <div class="form-group">
+            <div class="form-group mx-3">
               <label for="password">Password</label>
               <input v-model="password" type="password" id="password" class="form-control" />
             </div>
@@ -25,7 +25,7 @@
               <button class="btn btn-primary pull-right my-2">Submit</button>
             </div>
           </div>
-            <router-link to="/register">Регистрирай се!</router-link>
+            <router-link to="/register">Register!</router-link>
           </div>
           
           <div class="col-md-3"></div>
@@ -77,28 +77,16 @@ export default {
             } else {
               this.$router.push({ path: '/login', query: { error: 'invalid' } });
             }
-          });
-        /*
-          .then(res => function (res) {
-            console.log(isAuthenticated)
-            if(this.isAuthenticated) {
-              this.$router.push("/");
-            }
-          });
-          */
+          })
       }
     }
   }
 };
-
-/*
-       this.axios.get("http://localhost:8000/test").then((response) => {
-        console.log(response.data)
-        
-})
-*/
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.container {
+  margin-top: 60px;
+}
 </style>

@@ -143,4 +143,42 @@ class ArticleController extends Controller
         }
     }
 
+    /**
+     * @Route("/delete-article", name="deleteArticle")
+     */
+    public function deleteArticleAction(Request $request) {
+        $response = new Response();
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Credentials', 'true');
+        $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+        $response->headers->set('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+        $data = json_decode($request->getContent(), true);
+        $id = $data['id'];
+        if($id) {
+            /** @var Article $article */
+            $article=$this->getDoctrine()->getRepository(Article::class)->find($id);
+            $comments=$article->getComments();
+            foreach($comments as $comment) {
+                $em = $this->getDoctrine()->getManager();
+                $em->remove($comment);
+                $em->flush();
+            }
+
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($article);
+            $em->flush();
+
+            $response->setContent(json_encode([
+                'success' => 'success'
+            ]));
+            return $response;
+        } else {
+            $response->setContent(json_encode([
+                'error' => 'error'
+            ]));
+            return $response;
+        }
+    }
 }
