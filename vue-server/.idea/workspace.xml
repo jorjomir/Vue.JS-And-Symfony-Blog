@@ -2,46 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cef1b8f3-2cf3-484f-b475-27173f6f01a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/fonts/Linearicons-Free.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/fonts/Linearicons-Free.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/fonts/Linearicons-Free.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/fonts/Linearicons-Free.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/fonts/Linearicons-Free.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/js/imagesloaded.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/js/isotope-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/js/jquery-3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/js/jquery.magnific-popup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/js/jquery.nice-select.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/js/owl.carousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/js/popper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/js/stellar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/magnific-popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/main.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/nice-select.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/owl.carousel.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/assets/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/Article/Article.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/components/Article/Article.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/Blog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/components/Blog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/src/components/Article/NewArticle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/components/Article/NewArticle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/src/components/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/components/Index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vue/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/components/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/components/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/components/Register.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vue/src/components/TopNavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/components/TopNavbar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vue/src/services/articleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/services/articleService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vue/src/services/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/services/authService.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -144,7 +111,8 @@
       <workItem from="1566465129209" duration="7087000" />
       <workItem from="1566583594687" duration="11115000" />
       <workItem from="1566680479629" duration="2868000" />
-      <workItem from="1566694074772" duration="1100000" />
+      <workItem from="1566694074772" duration="1748000" />
+      <workItem from="1566729339274" duration="606000" />
     </task>
     <servers />
   </component>

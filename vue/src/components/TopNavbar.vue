@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Georgi Sabev</a>
+      <router-link to="/" class="navbar-brand">Georgi Sabev</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -17,9 +17,6 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <router-link to="/" class="nav-link">Home</router-link>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
             <router-link to="/blog" class="nav-link">Blog</router-link>
@@ -66,5 +63,8 @@ export default {
 .navbar {
   z-index: 999999;
   margin-bottom: 0!important;
+}
+.navbar-brand {
+  cursor: pointer;
 }
 </style>

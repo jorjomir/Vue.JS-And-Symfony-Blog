@@ -23,6 +23,10 @@
               <label for="password">Password</label>
               <input v-model="password" type="password" id="password" class="form-control" />
             </div>
+            <div class="text-center text-danger"  
+            v-if="!$v.password.minLength">
+              <p>Password must be at least 3 characters long!</p>
+            </div>
             <div class="form-group">
               <label for="repeat-password">Repeat password</label>
               <input v-model="repeatPassword" @input="$v.repeatPassword.$touch()" type="password" id="repeatPassword" class="form-control" />
@@ -32,7 +36,7 @@
               <p>Passwords don't match!</p>
             </div>
             <div>
-              <button :disabled="!error || !$v.repeatPassword.sameAsPassword" class="btn btn-primary pull-right">Submit</button>
+              <button :disabled="!error || !$v.repeatPassword.sameAsPassword || !$v.password.minLength" class="btn btn-primary pull-right">Submit</button>
             </div>
           </div>
           <div class="col-md-3"></div>
@@ -60,6 +64,10 @@ export default {
   validations: {
       username: {
           required
+      },
+      password: {
+        required,
+        minLength: minLength(3)
       },
       repeatPassword: {
           sameAsPassword: sameAs('password')

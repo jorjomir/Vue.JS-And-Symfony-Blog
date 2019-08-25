@@ -85,6 +85,7 @@ export default {
   border-top-right-radius: 0px;
 }
 .row {
+  margin-top: 40px;
     margin-right: unset;
     margin-left: unset;
 }

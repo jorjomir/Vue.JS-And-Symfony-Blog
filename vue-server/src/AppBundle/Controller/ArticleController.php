@@ -89,7 +89,7 @@ class ArticleController extends Controller
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
             'SELECT a
-        FROM AppBundle:Article a'
+        FROM AppBundle:Article a ORDER BY a.id DESC'
         );
         $articles = $query->getArrayResult();
 

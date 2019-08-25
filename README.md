@@ -6,6 +6,7 @@ Online portfolio
 
 * [Symfony](https://symfony.com/) - Used for back-end
 * [Vue.js](https://vuejs.org/) - Used for creating the Single Page Application
+* [Doctrine](https://www.doctrine-project.org/) - Used for communicating with the MySQL server
 
 
 ### Installing

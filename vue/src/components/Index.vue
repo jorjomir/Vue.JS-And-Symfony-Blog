@@ -9,7 +9,7 @@
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="../assets/images/cv-pic.jpg" alt="Image"/></a></div>
           <div class="h2 title">Georgi Sabev</div>
-          <p class="category text-white mt-3">Web Developer</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+          <p class="category text-white mt-3">Web Developer</p><a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
         </div>
       </div>
       <div class="section">
@@ -27,8 +27,8 @@
         <div class="col-lg-6 col-md-12">
           <div class="card-body">
             <div class="h4 mt-0 title">About</div>
-            <p>Hello! I am Anthony Barnett. Web Developer, Graphic Designer and Photographer.</p>
-            <p>Creative CV is a HTML resume template for professionals. Built with Bootstrap 4, Now UI Kit and FontAwesome, this modern and responsive design template is perfect to showcase your portfolio, skills and experience. <a href="https://templateflip.com/templates/creative-cv/" target="_blank">Learn More</a></p>
+            <p>Hello! I am Georgi Sabev.</p>
+            <p>I am Web Developer. I have been coding for 3 years, mainly using PHP, MySQL, JS, Bootstrap and CSS. I also develop Wordpress websites and e-shops.</p>
           </div>
         </div>
         <div class="col-lg-6 col-md-12">
@@ -113,57 +113,20 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="section" id="experience">
-  <div class="container cc-experience">
-    <div class="h4 text-center mb-4 title">Work Experience</div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>March 2016 - Present</p>
-            <div class="h5">CreativeM</div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">Symfony</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div><span class="progress-value">80%</span>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Front End Developer</div>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>April 2014 - March 2016</p>
-            <div class="h5">WebNote</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Web Developer</div>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>April 2013 - February 2014</p>
-            <div class="h5">WEBM</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Intern</div>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">Wordpress</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div><span class="progress-value">70%</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -173,53 +136,105 @@
 <div class="section">
   <div class="container cc-education">
     <div class="h4 text-center mb-4 title">Education</div>
-    <div class="card">
+    <div class="card highSchool">
       <div class="row">
         <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <p>2013 - 2015</p>
-            <div class="h5">Master's Degree</div>
+            <p>November 2018</p>
+            <div class="h5">IT Certificate</div>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Master of Information Technology</div>
-            <p class="category">University of Computer Science</p>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+            <div class="h5">PHP MVC Frameworks - Symfony</div>
+            <p class="category">Software University</p>
+            <p>Grade: 6.00 <br/> <a href="https://softuni.bg/certificates/details/62266/7179ef62">Certificate</a></p>
           </div>
         </div>
       </div>
     </div>
-    <div class="card">
+    <div class="card highSchool">
       <div class="row">
         <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <p>2009 - 2013</p>
-            <div class="h5">Bachelor's Degree</div>
+            <p>September 2018</p>
+            <div class="h5">IT Certificate</div>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Bachelor of Computer Science</div>
-            <p class="category">University of Computer Science</p>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+            <div class="h5">PHP Web Development</div>
+            <p class="category">Software University</p>
+            <p>Grade: 5.90 <br/> <a href="https://softuni.bg/certificates/details/59980/bec3c676">Certificate</a></p>
           </div>
         </div>
       </div>
     </div>
-    <div class="card">
+    <div class="card highSchool">
       <div class="row">
         <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-education-header">
-            <p>2007 - 2009</p>
+            <p>March 2018</p>
+            <div class="h5">IT Certificate</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">JS Applications</div>
+            <p class="category">Software University</p>
+            <p>Grade: 5.09 <br/> <a href="https://softuni.bg/certificates/details/54587/13ee0ff5">Certificate</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card highSchool">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p>February 2018</p>
+            <div class="h5">IT Certificate</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">JS Advanced</div>
+            <p class="category">Software University</p>
+            <p>Grade: 5.64 <br/> <a href="https://softuni.bg/certificates/details/52962/50aac61f">Certificate</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card highSchool">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p>April 2017</p>
+            <div class="h5">IT Certificate</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Programming Basics with C#</div>
+            <p class="category">Software University</p>
+            <p>Grade: 5.00 <br/> <a href="https://softuni.bg/certificates/details/20874/6bee0f8f">Certificate</a></p>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card highSchool">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p>2014 - 2019</p>
             <div class="h5">High School</div>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Science and Mathematics</div>
-            <p class="category">School of Secondary board</p>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+            <div class="h5">Computer Science and Mathematics</div>
+            <p class="category">Mathematics High School, Pleven</p>
+            
           </div>
         </div>
       </div>
@@ -247,4 +262,13 @@ export default {
 .page-header-image {
   background-image: url('../assets/images/cc-bg-1.jpg');
 }
+
+.highSchool .card-body {
+  padding-top: 25px;
+  min-height: 100px
+}
+.cc-education img{
+  max-height: 100px;
+}
+
 </style>

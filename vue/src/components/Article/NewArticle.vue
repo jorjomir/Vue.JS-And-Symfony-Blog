@@ -33,7 +33,7 @@
 
 <script>
 import { newArticle } from "@/services/articleService";
-import { required, maxLength } from "vuelidate/lib/validators";
+import { required } from "vuelidate/lib/validators";
 export default {
   name: "NewArticle",
   data() {
@@ -49,8 +49,7 @@ export default {
       required
     },
     summary: {
-      required,
-      maxLength: maxLength(5)
+      required
     },
     content: {
       required

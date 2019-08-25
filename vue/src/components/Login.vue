@@ -6,28 +6,28 @@
           <div class="col-md-3"></div>
           <div class="col-md-6">
             <div class="card">
-            <h3 class="mb-3">Login</h3>
-            <div class="text-center text-danger" v-if="$v.$error">
-              <p>Invalid username or password!</p>
+              <h3 class="mb-3">Login</h3>
+              <div class="text-center text-danger" v-if="$v.$error">
+                <p>Invalid username or password!</p>
+              </div>
+              <div class="text-center text-danger" v-if="error">
+                <p>Invalid username or password!</p>
+              </div>
+              <div class="form-group mx-3">
+                <label for="username">Username</label>
+                <input v-model="username" type="text" id="username" class="form-control" />
+              </div>
+              <div class="form-group mx-3">
+                <label for="password">Password</label>
+                <input v-model="password" type="password" id="password" class="form-control" />
+              </div>
+              <div>
+                <button class="btn btn-primary pull-right my-2">Submit</button>
+              </div>
             </div>
-            <div class="text-center text-danger" v-if="this.$route.query.error">
-              <p>Invalid username or password!</p>
-            </div>
-            <div class="form-group mx-3">
-              <label for="username">Username</label>
-              <input v-model="username" type="text" id="username" class="form-control" />
-            </div>
-            <div class="form-group mx-3">
-              <label for="password">Password</label>
-              <input v-model="password" type="password" id="password" class="form-control" />
-            </div>
-            <div>
-              <button class="btn btn-primary pull-right my-2">Submit</button>
-            </div>
-          </div>
             <router-link to="/register">Register!</router-link>
           </div>
-          
+
           <div class="col-md-3"></div>
         </div>
       </form>
@@ -44,7 +44,8 @@ export default {
   data() {
     return {
       username: "",
-      password: ""
+      password: "",
+      error: false
     };
   },
   mixins: [loginUser],
@@ -65,20 +66,23 @@ export default {
           // eslint-disable-next-line
           .then(user => {
             if (!this.isAuthenticated) {
-              if(user.data.username=="jorjomir") {
-                this.$root.$emit('logged', user.data.token)
-                this.$root.$emit('logged-admin', user.data.username)
-                this.$router.push('/');
+              if (user.data.username == "jorjomir") {
+                this.$root.$emit("logged", user.data.token);
+                this.$root.$emit("logged-admin", user.data.username);
+                this.$router.push("/");
               } else {
-                this.$root.$emit('logged', user.data.token)
-                this.$router.push('/');
+                this.$root.$emit("logged", user.data.token);
+                this.$router.push("/");
               }
-              
-            } else {
-              this.$router.push({ path: '/login', query: { error: 'invalid' } });
             }
           })
+          .catch(
+            setTimeout(() => {
+              this.error = true;
+            }, 1000)
+          );
       }
+      //this.error=true
     }
   }
 };

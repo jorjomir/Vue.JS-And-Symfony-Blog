@@ -1,5 +1,6 @@
 <template>
 <div>
+  <title>Georgi Sabev</title>
   <topnavbar></topnavbar>
   <div id="app">
     <transition name="page" mode="out-in">

@@ -44,7 +44,6 @@ export const loginUser = {
                   password: password
                 })
                 .then(function(response) {
-                  console.log(response)
                     //LOGIN
                       if(response.data.username && response.data.token) {
                         localStorage.setItem('username', response.data.username);
